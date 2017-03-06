@@ -1,0 +1,40 @@
+---
+title: "Animal Care & Control Data Analysis: South Bend"
+output: html_document
+---
+#Introduction
+This is the first in a series of reports, attempting to show which datasets are publicly available in my hometown of South Bend, Indiana.
+My motivation for this project is twofold: the first objective is to stress the importance of robust open data and the second is to highlight the improvements that are necessary for South Bend's Open Data Portal.
+
+With that out of the way, this first report will cover the "Animal Care and Control Monthly Statistics" dataset, located [here](http://data-southbend.opendata.arcgis.com/datasets/7176100434074f48adf40747b6bc1e70_0). 
+
+```{r Initial-Analysis, echo=FALSE}
+setwd("~/ODV/AnimalControl-SB")
+dat = read.csv("Animal_Care_and_Control_Monthly_Statistics.csv")
+dat = na.omit(dat) #removing NA's 
+dat.final = dat[,c(-2,-7)] # removed year column which contained only 2014 and FID column which is identical to month column
+
+```
+
+After loading the data with some slight manipulations, it will be helpful for us to see the summary statistics of the columns.
+
+```{r}
+summary(dat.final)
+```
+
+The first column simply contains the months of one year, but the summaries for the other columns tell us that in 2014 there was an average 
+of 25 adoptions, about 30 pets returned home, and about 17 bite cases serviced per month. The rescue/rehab transfer out column seems to be tail heavy with
+#Plots 
+
+```{r Plots, echo=FALSE}
+plot(dat.final$Adoptions~dat.final$Month, xlab= "Month", ylab="# of Adoptions", main="Monthly Adoptions")
+plot(dat.final$Bite_Cases_Serviced_by_SBACC~dat.final$Month, xlab= "Month", ylab="# of Bite Cases", main="Monthly Bite Cases")
+plot(dat.final$Pets_Returned_Home~dat.final$Month, xlab= "Month", ylab="# of Pets Returned Home", main="Monthly Pets Returned Home")
+```
+
+#Analysis 
+
+```{r Analysis, echo=FALSE}
+
+```
+
