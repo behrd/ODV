@@ -1,0 +1,34 @@
+---
+title: "Abandoned Property Parcels Analysis: South Bend"
+output: html_document
+---
+#Introduction
+
+The "Abandoned Property Parcels" dataset can be found [here](http://data-southbend.opendata.arcgis.com/datasets/f21d9d69303346ab827f74bfcfb14b28_0). 
+
+```{r Initial-Analysis, echo=FALSE}
+setwd("~/ODV/AbandonedProperties-SB")
+dat = read.csv("Abandoned_Property_Parcels.csv")
+dat.clean = na.omit(dat) #removing NA's 
+
+
+```
+
+
+```{r}
+summary(dat.clean)
+```
+
+
+#Plots 
+
+```{r Plots, echo=FALSE}
+
+```
+
+#Analysis 
+
+```{r Analysis, echo=FALSE}
+
+```
+
